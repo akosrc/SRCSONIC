@@ -10,14 +10,19 @@
 #pragma clang diagnostic ignored "-Wunicode-whitespace"
 
 // HMOOD__TG@i_8_f
- 
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <Metal/Metal.h>
+#import <MetalKit/MetalKit.h>      // HATA ÇÖZÜMÜ: MTKView için eklendi
+#include <mach-o/dyld.h>           // HATA ÇÖZÜMÜ: _dyld_image_count için eklendi
 
 #import "Engine.h"
-#include "ESP/menu.h"              // Düzeltildi
-#include "ESP/esp.h"               // Düzeltildi
-#import "ESP/mahoa.h"              // Düzeltildi
+#include "ESP/menu.h"              
+#include "ESP/esp.h"               
+#import "ESP/mahoa.h"              
 #include "sys/mman.h"
-#include "ESP/Tools.h"             // Düzeltildi
+#include "ESP/Tools.h"             
 #include <stdio.h>
 #include <stdint.h>
 #import <sys/utsname.h>
@@ -40,18 +45,17 @@
 #include <stdlib.h>
 #include <string>
 #include <filesystem>
-#import "ESP/HideFunsion.h"       // Düzeltildi
+#import "ESP/HideFunsion.h"       
 
 #include <stdio.h>
 #include <string.h>
-#include "ESP/Vector3.hpp"         // Düzeltildi (Eğer ESP içindeyse)
-#include "ESP/Vector2.hpp"         // Düzeltildi (Eğer ESP içindeyse)
-#import <Foundation/Foundation.h>
-#import "ESP/UE4.h"                // Düzeltildi
-#import "ESP/PubgLoad.h"           // Düzeltildi
-#include "ESP/imgui/imgui.h"       // Düzeltildi
-#import "ESP/HeeeNoScreenShotView.h" // Düzeltildi
-#import "ESP/ini_rw.h"             // Düzeltildi
+#include "ESP/Vector3.hpp"         
+#include "ESP/Vector2.hpp"         
+#import "ESP/UE4.h"                
+#import "ESP/PubgLoad.h"           
+#include "ESP/imgui/imgui.h"       
+#import "ESP/HeeeNoScreenShotView.h" 
+#import "ESP/ini_rw.h"
 #define ImClamp(X, MIN, MAX) ((X) < (MIN) ? (MIN) : ((X) > (MAX) ? (MAX) : (X)))
 #define kWidth  [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
