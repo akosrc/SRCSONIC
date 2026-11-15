@@ -1,7 +1,6 @@
 // HMOOD__TG@i_8_f
 #pragma once
 
-// HATA ÇÖZÜMÜ: Eksik Kütüphaneler Eklendi
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <Metal/Metal.h>
@@ -14,9 +13,15 @@
 #error "metalbiew_private.h must only be included by metalbiew.mm"
 #endif
 
+// HATA ÇÖZÜMÜ: metalbiew ana sınıf tanımı buraya eklendi.
+// Bu tanım olmadan derleyici metalbiew'in UIViewController'dan türediğini bilemez.
+@interface metalbiew : UIViewController <MTKViewDelegate>
+@end
+
 float Z = 0.5f;
 static std::atomic<float> aimDisplayWidth{0.f}, aimDisplayHeight{0.f};
 
+// Kategori (Class Extension) - Mevcut kodunuz
 @interface metalbiew () <MTKViewDelegate>
 @property(nonatomic, strong) IBOutlet MTKView* mtkView;
 @property(nonatomic, strong) id<MTLDevice> device;
@@ -52,7 +57,7 @@ extern bool MXValQy;
 extern UIView* menuIconView;
 extern float menuIconAlpha;
 
-// ÇAKIŞMA ÇÖZÜMÜ: extern yapıldı
+// ÇAKIŞMA ÇÖZÜMÜ: Tüm değişkenler extern yapıldı
 extern bool hideNameKillMsg;
 extern float strokeIntensity;
 extern ASTExtraPlayerController* g_LocalController;
@@ -69,9 +74,11 @@ namespace Settings {
     extern bool isVisibilityCheck;
     extern bool ifismembotenable;
     extern bool BypassMode;
+    
     namespace SettingsTab {
         extern bool BypassMode;
     }
+
     namespace Aimbot {
         extern bool Enable;
         extern bool Tick;
@@ -80,6 +87,7 @@ namespace Settings {
         extern float FOV;
         extern bool MemoryAimbot;
         extern bool SilentAim;
+
         namespace SilentAimSettings {
             extern bool Enable;
             extern bool AimKnocked;
