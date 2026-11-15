@@ -9,12 +9,11 @@
 #include <chrono>
 #include <mutex>
 
-// Düzeltilmiş Yollar
+// Ana dizindeki dosyalar
 #import "SDK.hpp"
-#include "ESP/imgui/imgui.h"
-
-#include "esp.h"
-#include "menu.h"
+#include "esp.h"         // Artık ana dizinde olduğu için doğrudan çağırıyoruz
+#include "menu.h"        // Artık ana dizinde olduğu için doğrudan çağırıyoruz
+#include "ESP/imgui/imgui.h" // ImGui hala ESP klasörünün içinde
 
 // Global değişkenler
 extern ASTExtraPlayerCharacter *g_LocalPlayer;
