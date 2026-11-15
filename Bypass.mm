@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <dlfcn.h>
 #include <mach-o/dyld.h>
+#include <sys/ptrace.h>      // ptrace için gerekli
+#import <substrate.h>       // MSHookFunction için gerekli (Theos'ta varsayılan gelir)
 
 // 1. PTRACE KORUMASINI ATLATMA
 static int (*orig_ptrace)(int request, pid_t pid, caddr_t addr, int data);
@@ -37,7 +39,7 @@ const char *my_dyld_get_image_name(uint32_t image_index) {
     return name;
 }
 
-// Eski %ctor yerine C++ constructor kullanıyoruz
+// C++ Constructor (Eski %ctor yerine)
 __attribute__((constructor))
 static void bypass_init() {
     @autoreleasepool {
