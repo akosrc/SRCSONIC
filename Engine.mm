@@ -713,7 +713,7 @@ void DrawLine(AHUD *HUD, FVector2D posFrom, FVector2D posTo, float Thickness, FL
 
  
 #define TSL_FONT_DEFAULT_SIZE 26
-static UFont *robotoFont = 0, *robotoTinyFont = 0,*tslFont = 0;
+UFont *robotoFont = 0, *robotoTinyFont = 0,*tslFont = 0;
  
 
  
