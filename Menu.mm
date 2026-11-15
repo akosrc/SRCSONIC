@@ -24,8 +24,8 @@
 #include "ESP/imgui/imgui_internal.h"
 #include "ESP/font_awesome_5.h"
 #include "ESP/fa_solid_900.h"
-#include "ini_rw.h"
-#include "menu.h"
+#include "ESP/ini_rw.h"
+#include "ESP/menu.h"
 #import <sys/sysctl.h>
 #import <sys/stat.h>
 #include <dlfcn.h>
