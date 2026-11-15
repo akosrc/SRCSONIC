@@ -93,7 +93,7 @@ float Cross = 150.f;
 float g_disstance = 150.0f;
 float strokeIntensity = 1.0f;
 float globalHpAlphaF = 1.00f;
-float lineThickness = 1.5f;
+
 
 ImColor bgColor = ImColor(0, 0, 0, 80);
 ImU32 COLOR_Distance = IM_COL32(255, 255, 255, 255);
@@ -105,7 +105,7 @@ ASTExtraPlayerController* localPlayerController = nullptr;
 ASTExtraPlayerCharacter* localPlayer = nullptr;
 
 ImFont* mainFont = nullptr;
-ImFont* cyberMenuFont = nullptr;
+
 
 int screenWidth = 0;
 int screenHeight = 0;
@@ -115,7 +115,7 @@ int glHeight = 0;
 UFont *tslFont = 0, *robotoFont = 0, *robotoTinyFont = 0;
 HeeeNoScreenShotView* hideesp = nullptr;
 
-bool MenDeal = true;
+
 bool IsEnglish = false;
 bool ShowFov = false;
 int 玩家 = 0, 人机 = 0;
