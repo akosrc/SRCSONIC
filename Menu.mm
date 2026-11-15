@@ -18,12 +18,11 @@
 #import <Metal/Metal.h>
 #include <string>
 #import "Engine.h"
-#import "mahoa.h"
-#include "Tools.h"
-#import "PubgLoad.h"
-#include "imgui.h"
-#include "imgui_internal.h"
-#include "font_awesome_5.h"
+#include "ESP/menu.h"
+#include "ESP/esp.h"
+#include "ESP/imgui/imgui.h"
+#include "ESP/imgui/imgui_internal.h"
+#include "ESP/font_awesome_5.h"
 #include "fa_solid_900.h"
 #include "ini_rw.h"
 #include "menu.h"
