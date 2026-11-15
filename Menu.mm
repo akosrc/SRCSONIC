@@ -1,23 +1,29 @@
 // HMOOD__TG@i_8_f
- 
 
- 
- 
-
-// HMOOD__TG@i_8_f
-
-
-#import <MetalKit/MetalKit.h>
-#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import <sys/utsname.h>
+#import <UIKit/UIKit.h>
+#import <Metal/Metal.h>
+#import <MetalKit/MetalKit.h> 
+#include <mach-o/dyld.h>
+#include <sys/sysctl.h>
+#include <sys/stat.h>
+#include <dlfcn.h>
+#include <pthread.h>
+#include <math.h>
+#include <cfloat>
+#include <cstdio>
+#include <vector>
 #include <chrono>
 #include <atomic>
 #include <array>
 #include <unordered_map>
 #include <utility>
-#import <Metal/Metal.h>
 #include <string>
+#include <mach/mach.h>
+#include <mach/mach_host.h>
+#include <mach/vm_statistics.h>
+
+// ESP Klasöründeki Dosyalar (Yollar Düzeltildi)
 #import "Engine.h"
 #include "ESP/menu.h"
 #include "ESP/esp.h"
@@ -26,24 +32,8 @@
 #include "ESP/font_awesome_5.h"
 #include "ESP/fa_solid_900.h"
 #include "ESP/ini_rw.h"
-#include "ESP/menu.h"
-#import <sys/sysctl.h>
-#import <sys/stat.h>
-#include <dlfcn.h>
-#include <mach-o/dyld.h>
-#include <pthread.h>
 #include "ESP/menu_detail_assets.h"
 #include "ESP/menu_navigation_assets.h"
-#include <cmath>
-#include <cfloat>
-#include <cstdio>
-#include <vector>
-#include <mach/mach.h>
-#include <mach/mach_host.h>
-#include <mach/vm_statistics.h>
-
-// HMOOD__TG@i_8_f
-
 
 using namespace SDK;
 
