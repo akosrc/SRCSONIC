@@ -1,39 +1,49 @@
-// HMOOD__TG@i_8_f
- 
+#ifndef Engine_h
+#define Engine_h
 
-
-
-#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
-#import <CoreGraphics/CoreGraphics.h>
 #import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
-#import <mach-o/dyld.h>
-#import <mach-o/arch.h>
-#import <mach/vm_region.h>
-#import <malloc/malloc.h>
-#import <objc/runtime.h>
-#include <string>
-#import <mach/mach.h>
-#include <thread>
-#include <iostream>
 #include <vector>
-#include <array>
-#include <array>
-#import "../SDK.hpp"
-#import <Metal/Metal.h>
-#import <MetalKit/MetalKit.h>
-#include "imgui/imgui.h"
-#include "imgui/imgui_impl_metal.h"
-NS_ASSUME_NONNULL_BEGIN
+#include <string>
+#include <map>
+#include <chrono>
+#include <mutex>
 
+// Düzeltilmiş Yollar
+#import "SDK.hpp"
+#include "ESP/imgui/imgui.h"
 
-@interface metalbiew : UIViewController
+#include "esp.h"
+#include "menu.h"
 
+// Global değişkenler
+extern ASTExtraPlayerCharacter *g_LocalPlayer;
+extern ASTExtraPlayerController *g_PlayerController;
+extern ASTExtraPlayerController *g_LocalController;
 
-+ (void)showChange:(BOOL)open;
+extern int screenWidth;
+extern int screenHeight;
+extern int glWidth;
+extern int glHeight;
 
+extern bool IsLogin;
+extern bool MenDeal;
 
-@end
+// Fontlar
+extern UFont *tslFont;
+extern UFont *robotoFont;
+extern UFont *robotoTinyFont;
 
-NS_ASSUME_NONNULL_END
+// Fonksiyon tanımları
+UWorld *GetFullWorld();
+TNameEntryArray *GetGNames();
+void RenderESP(AHUD *HUD, int ScreenWidth, int ScreenHeight);
+FVector GetBoneLocationByName(ASTExtraPlayerCharacter *Actor, const char *BoneName);
+ASTExtraPlayerCharacter* GetTargetByCrossDist();
+const char *GetVehicleName(ASTExtraVehicleBase *Vehicle);
+
+// Yardımcı fonksiyonlar
+bool WriteAddr(void *addr, void *buffer, size_t length);
+kaddr getRealOffset(kaddr offset);
+
+#endif /* Engine_h */
