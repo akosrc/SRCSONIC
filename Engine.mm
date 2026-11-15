@@ -719,8 +719,8 @@ public:
     }
 };
 struct FLinearColor visCol;
-ASTExtraPlayerCharacter *g_LocalPlayer;
-ASTExtraPlayerController *g_PlayerController;
+// ASTExtraPlayerCharacter *g_LocalPlayer;  // HATA ÇÖZÜMÜ: Yorum satırı yapıldı (Yukarıda tanımlı)
+// ASTExtraPlayerController *g_PlayerController; // HATA ÇÖZÜMÜ: Yorum satırı yapıldı (Yukarıda tanımlı)
 #define COLOR_BLACK FLinearColor(0, 0, 0, 1.f)
 #define COLOR_WHITE FLinearColor(1.f, 1.f, 1.f, 1.f)
 #define COLOR_RED   FLinearColor(1.f, 0, 0, 1.f)
@@ -841,7 +841,7 @@ void DrawLine(AHUD *HUD, FVector2D posFrom, FVector2D posTo, float Thickness, FL
 
  
 #define TSL_FONT_DEFAULT_SIZE 26
-UFont *robotoFont = 0, *robotoTinyFont = 0,*tslFont = 0;
+// UFont *robotoFont = 0, *robotoTinyFont = 0,*tslFont = 0; // HATA ÇÖZÜMÜ: Yorum satırı yapıldı (Yukarıda tanımlı)
  
 
  
@@ -897,7 +897,7 @@ void *LoadFont() {
     while (!robotoFont || !robotoTinyFont || !tslFont) {
         tslFont = UObject::FindObject<UFont>("Font TSLFont.TSLFont");
         robotoFont = UObject::FindObject<UFont>("Font Roboto.Roboto");
-        robotoTinyFont = UObject::FindObject<UFont>("Font RobotoTiny.RobotoTiny");
+        robotoTinyFont = UObject::FindObject<Font RobotoTiny.RobotoTiny");
         sleep(1);
     }
     return 0;
@@ -999,7 +999,7 @@ if (hideNameKillMsg && g_PlayerController->PlayerKey == FatalDamageParameter->Ca
 }
 
 
-int glWidth, glHeight;
+// int glWidth, glHeight; // HATA ÇÖZÜMÜ: Yorum satırı yapıldı (Yukarıda tanımlı)
 
 // HMOOD__TG@i_8_f
 static FVector ResolveAimPosition(ASTExtraPlayerCharacter* player, ASTExtraPlayerController* controller);
