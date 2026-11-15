@@ -71,7 +71,7 @@
 #undef HMOOD_METALBIEW_IMPLEMENTATION
 
 // ==========================================
-// LİNKER İÇİN TANIMSIZ DEĞİŞKENLER (242. SATIRA KADAR)
+// LİNKER İÇİN TANIMSIZ DEĞİŞKENLER (249. SATIRA KADAR)
 // ==========================================
 
 bool hideNameKillMsg = false;
@@ -84,7 +84,7 @@ bool ifismembotenable = false;
 bool MagicSDK = false;
 bool IsFastSwitch = false;
 bool IsLogin = true;
-bool IsStyle = 1;
+int IsStyle = 1; // DÜZELTİLDİ: int olarak değiştirildi
 float ESPMaxDistance = 300.f;
 float AlertRadius = 50.f;
 float SilentAimMaxDistance = 355.f;
