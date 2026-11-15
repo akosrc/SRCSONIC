@@ -8,16 +8,20 @@
 #include <map>
 #include <chrono>
 #include <mutex>
+#include <stdint.h>
 
 // Ana dizindeki SDK
 #import "SDK.hpp"
 
-// ESP klasörünün içindeki başlıklar (Makefile'daki -IESP sayesinde bulunacak)
+// ESP klasörünün içindeki başlıklar
 #include "ESP/esp.h" 
 #include "ESP/menu.h"
 #include "ESP/imgui/imgui.h" 
 
-// Global değişkenler (Engine.mm'de kullanılanlar)
+// HATA ÇÖZÜMÜ: kaddr tipini burada tanımlıyoruz
+typedef uintptr_t kaddr;
+
+// Global değişkenler
 extern ASTExtraPlayerCharacter *g_LocalPlayer;
 extern ASTExtraPlayerController *g_PlayerController;
 extern ASTExtraPlayerController *g_LocalController;
