@@ -5,8 +5,10 @@
 #include <unistd.h>
 #include <dlfcn.h>
 #include <mach-o/dyld.h>
-#include <sys/ptrace.h>      // ptrace için gerekli
-#import <substrate.h>       // MSHookFunction için gerekli (Theos'ta varsayılan gelir)
+#include <substrate.h>       // MSHookFunction için gerekli (Theos'un içinden gelir)
+
+// ptrace fonksiyonu için gerekli deklarasyon (sys/ptrace.h yerine)
+extern "C" int ptrace(int request, pid_t pid, caddr_t addr, int data);
 
 // 1. PTRACE KORUMASINI ATLATMA
 static int (*orig_ptrace)(int request, pid_t pid, caddr_t addr, int data);
