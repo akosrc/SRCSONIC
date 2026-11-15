@@ -13,11 +13,11 @@
  
 
 #import "Engine.h"
-#include "ESP/menu.h"
-#include "ESP/esp.h"
-#import "mahoa.h"
+#include "ESP/menu.h"              // Düzeltildi
+#include "ESP/esp.h"               // Düzeltildi
+#import "ESP/mahoa.h"              // Düzeltildi
 #include "sys/mman.h"
-#include "Tools.h"
+#include "ESP/Tools.h"             // Düzeltildi
 #include <stdio.h>
 #include <stdint.h>
 #import <sys/utsname.h>
@@ -40,18 +40,18 @@
 #include <stdlib.h>
 #include <string>
 #include <filesystem>
-#import "HideFunsion.h"
+#import "ESP/HideFunsion.h"       // Düzeltildi
 
 #include <stdio.h>
 #include <string.h>
-#include "Vector3.hpp"
-#include "Vector2.hpp"
+#include "ESP/Vector3.hpp"         // Düzeltildi (Eğer ESP içindeyse)
+#include "ESP/Vector2.hpp"         // Düzeltildi (Eğer ESP içindeyse)
 #import <Foundation/Foundation.h>
-#import "UE4.h"
-#import "PubgLoad.h"
-#include "imgui.h"
-#import "HeeeNoScreenShotView.h"
-#import "ini_rw.h"
+#import "ESP/UE4.h"                // Düzeltildi
+#import "ESP/PubgLoad.h"           // Düzeltildi
+#include "ESP/imgui/imgui.h"       // Düzeltildi
+#import "ESP/HeeeNoScreenShotView.h" // Düzeltildi
+#import "ESP/ini_rw.h"             // Düzeltildi
 #define ImClamp(X, MIN, MAX) ((X) < (MIN) ? (MIN) : ((X) > (MAX) ? (MAX) : (X)))
 #define kWidth  [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
