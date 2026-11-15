@@ -897,7 +897,7 @@ void *LoadFont() {
     while (!robotoFont || !robotoTinyFont || !tslFont) {
         tslFont = UObject::FindObject<UFont>("Font TSLFont.TSLFont");
         robotoFont = UObject::FindObject<UFont>("Font Roboto.Roboto");
-        robotoTinyFont = UObject::FindObject<Font RobotoTiny.RobotoTiny");
+        robotoTinyFont = UObject::FindObject<UFont>("Font RobotoTiny.RobotoTiny");
         sleep(1);
     }
     return 0;
