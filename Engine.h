@@ -9,13 +9,15 @@
 #include <chrono>
 #include <mutex>
 
-// Ana dizindeki dosyalar
+// Ana dizindeki SDK
 #import "SDK.hpp"
-#include "esp.h"         // Artık ana dizinde olduğu için doğrudan çağırıyoruz
-#include "menu.h"        // Artık ana dizinde olduğu için doğrudan çağırıyoruz
-#include "ESP/imgui/imgui.h" // ImGui hala ESP klasörünün içinde
 
-// Global değişkenler
+// ESP klasörünün içindeki başlıklar (Makefile'daki -IESP sayesinde bulunacak)
+#include "ESP/esp.h" 
+#include "ESP/menu.h"
+#include "ESP/imgui/imgui.h" 
+
+// Global değişkenler (Engine.mm'de kullanılanlar)
 extern ASTExtraPlayerCharacter *g_LocalPlayer;
 extern ASTExtraPlayerController *g_PlayerController;
 extern ASTExtraPlayerController *g_LocalController;
