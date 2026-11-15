@@ -58,11 +58,6 @@ static ImVec2 espProjectionScale(.5f, .5f);
 struct Color255 {
     uint8_t r, g, b, a;
 };
-
-
- 
- 
- 
   
 Color255 realVisibleColor   = {0, 255, 0, 255};  
 Color255 realInvisibleColor = {255, 0, 0, 255}; 
@@ -70,8 +65,10 @@ Color255 botVisibleColor    = {0, 255, 0, 255};
 Color255 botInvisibleColor  = {255, 255, 255, 255}; 
 
 static ImVec4 visibleColor   = ImVec4(0.f, 1.f, 0.f, 1.f); 
-        static ImVec4 unvisibleColor = ImVec4(1.f, 0.f, 0.f, 1.f); 
- float lineThickness = 1.5f;
+static ImVec4 unvisibleColor = ImVec4(1.f, 0.f, 0.f, 1.f); 
+
+// HATA ÇÖZÜMÜ: extern yapıldı (Engine.mm'de tanımlı)
+extern float lineThickness;
 
 struct ColorRGB { int r, g, b; };
 
@@ -242,8 +239,6 @@ static const char* WorldItemName(int id) {
         case 503001: return "Vest1"; case 503002: return "Vest2"; case 503003: return "Vest3";
         default: break;
     }
-    
-    
     
     static char s_unknownItem[24];
     snprintf(s_unknownItem, sizeof(s_unknownItem), "Item %d", id);
@@ -1088,8 +1083,6 @@ void DrawAimingLine()
     if (hs.X >= 0.f && hs.X <= screenWidth && hs.Y >= 0.f && hs.Y <= screenHeight)
         d->AddLine(screenCenter, ImVec2(hs.X, hs.Y), IM_COL32(255, 255, 255, 255), 1.f);
 }
-
-
 
 // HMOOD__TG@i_8_f
 void Drawesp() {
