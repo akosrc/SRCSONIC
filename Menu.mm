@@ -7,6 +7,7 @@
 // HMOOD__TG@i_8_f
 
 
+#import <MetalKit/MetalKit.h>
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <sys/utsname.h>
