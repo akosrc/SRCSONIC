@@ -11,13 +11,13 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = M7MD
 
-# Gerekli Frameworkler ve Kütüphaneler (substrate eklendi)
+# Gerekli Frameworkler ve Kütüphaneler (MetalKit ve substrate eklendi)
 M7MD_FRAMEWORKS = IOKit UIKit Foundation Security QuartzCore CoreGraphics CoreText AVFoundation Accelerate GLKit SystemConfiguration GameController WebKit Metal MetalKit substrate
 
 # Arama Yolları (Ana dizin, SDK, ESP ve ESP/imgui)
 M7MD_CFLAGS += -I. -ISDK -IESP -IESP/imgui -I/opt/theos/include
 
-# HATA ÇÖZÜMÜ: Derleyicinin verdiği tüm uyarıları görmezden gel
+# HATA ÇÖZÜMÜ: Derleyicinin verdiği tüm uyarıları (Warning) hata (Error) olmaktan çıkarıyoruz.
 M7MD_CCFLAGS = -w -std=gnu++17 -DNDEBUG -Wno-everything -Wno-error -Wno-deprecated-declarations -Wno-return-stack-address -Wno-unicode-whitespace -Wno-macro-redefined -Wno-int-to-pointer-cast -Wno-array-bounds -Wno-nontrivial-memcall -Wno-unused-variable
 M7MD_CFLAGS = -w -fobjc-arc -Wno-everything -Wno-error -Wno-deprecated-declarations -Wno-unused-variable -Wno-unused-value
 
