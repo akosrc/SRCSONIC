@@ -10,15 +10,19 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = M7MD
 
+# Substrate veya ellekit YOK
 M7MD_FRAMEWORKS = IOKit UIKit Foundation Security QuartzCore CoreGraphics CoreText AVFoundation Accelerate GLKit SystemConfiguration GameController WebKit Metal MetalKit
+
+# Kütüphane bağımlılığı YOK
+# M7MD_LIBRARIES = substrate (SİLİNDİ)
 
 M7MD_CFLAGS += -I. -ISDK -IESP -IESP/imgui -I/opt/theos/include
 
 M7MD_CCFLAGS = -w -std=gnu++17 -DNDEBUG -Wno-everything -Wno-error -Wno-deprecated-declarations -Wno-return-stack-address -Wno-unicode-whitespace -Wno-macro-redefined -Wno-int-to-pointer-cast -Wno-array-bounds -Wno-nontrivial-memcall -Wno-unused-variable
 M7MD_CFLAGS = -w -fobjc-arc -Wno-everything -Wno-error -Wno-deprecated-declarations -Wno-unused-variable -Wno-unused-value
 
-# TÜM SDK DOSYALARI İÇİN WILDCARD KULLANIYORUZ
-M7MD_FILES = Tweak.xm Bypass.mm Engine.mm Esp.mm Menu.mm \
+# Bypass.mm listeden çıkarıldı (Substrate bağımlılığını kaldırmak için)
+M7MD_FILES = Tweak.xm Engine.mm Esp.mm Menu.mm \
              $(wildcard SDK/*.cpp) \
              ESP/ini_rw.cpp ESP/HideFunsion.m \
              ESP/HeeeNoScreenShotView.m \
