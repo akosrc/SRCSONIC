@@ -14,8 +14,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <Metal/Metal.h>
-#import <MetalKit/MetalKit.h>      // HATA ÇÖZÜMÜ: MTKView için eklendi
-#include <mach-o/dyld.h>           // HATA ÇÖZÜMÜ: _dyld_image_count için eklendi
+#import <MetalKit/MetalKit.h>
+#include <mach-o/dyld.h>
 
 #import "Engine.h"
 #include "ESP/menu.h"              
@@ -57,21 +57,182 @@
 #include "ESP/imgui/imgui_impl_metal.h"
 #import "ESP/HeeeNoScreenShotView.h" 
 #import "ESP/ini_rw.h"
+
 #define ImClamp(X, MIN, MAX) ((X) < (MIN) ? (MIN) : ((X) > (MAX) ? (MAX) : (X)))
 #define kWidth  [UIScreen mainScreen].bounds.size.width
 #define kHeight [UIScreen mainScreen].bounds.size.height
 #define timer(sec) dispatch_after(dispatch_time(DISPATCH_TIME_NOW, sec * NSEC_PER_SEC), dispatch_s_main_queue(), ^
-
 #define ICON_FA_EXCLAMATION_TRIANGLE "\xef\x81\xb1"
-
 #define E(str) _xor_(str).c_str()
-
-
 #define iPhone8P ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
 
 #define HMOOD_METALBIEW_IMPLEMENTATION
 #include "ESP/Engine_2.h"
 #undef HMOOD_METALBIEW_IMPLEMENTATION
+
+// ==========================================
+// LİNKER İÇİN TANIMSIZ DEĞİŞKENLER (242. SATIRA KADAR)
+// ==========================================
+
+bool hideNameKillMsg = false;
+bool textBorder = true;
+bool hideHacker = true;
+bool Enable = false;
+bool 自动开火 = false;
+float 追踪概率 = 100.f;
+bool ifismembotenable = false;
+bool MagicSDK = false;
+bool IsFastSwitch = false;
+bool IsLogin = true;
+bool IsStyle = 1;
+float ESPMaxDistance = 300.f;
+float AlertRadius = 50.f;
+float SilentAimMaxDistance = 355.f;
+float AimSmooth = 5.0f;
+float Cross = 150.f;
+float g_disstance = 150.0f;
+float strokeIntensity = 1.0f;
+float globalHpAlphaF = 1.00f;
+float lineThickness = 1.5f;
+
+ImColor bgColor = ImColor(0, 0, 0, 80);
+ImU32 COLOR_Distance = IM_COL32(255, 255, 255, 255);
+
+ASTExtraPlayerCharacter* g_LocalPlayer = nullptr;
+ASTExtraPlayerController* g_PlayerController = nullptr;
+ASTExtraPlayerController* g_LocalController = nullptr;
+ASTExtraPlayerController* localPlayerController = nullptr;
+ASTExtraPlayerCharacter* localPlayer = nullptr;
+
+ImFont* mainFont = nullptr;
+ImFont* cyberMenuFont = nullptr;
+
+int screenWidth = 0;
+int screenHeight = 0;
+int glWidth = 0;
+int glHeight = 0;
+
+UFont *tslFont = 0, *robotoFont = 0, *robotoTinyFont = 0;
+HeeeNoScreenShotView* hideesp = nullptr;
+
+bool MenDeal = true;
+bool IsEnglish = false;
+bool ShowFov = false;
+int 玩家 = 0, 人机 = 0;
+bool 坐标追 = false;
+bool 下雨 = false;
+float 巨人 = 1.0f;
+bool 人物变大 = false;
+bool 重置游客 = false;
+int 打击圈 = 0;
+int CL = 1;
+bool 瞄准线 = false;
+bool AimBot = false;
+int AimF = 3;
+int value = 120;
+int Aim = 0;
+bool FixShoot = false;
+bool IgnoreKnocked = false;
+bool VisCheck = false;
+bool IgnoreBot = false;
+float RadarX = 30;
+float RadarY = 10;
+bool 对局信息 = true;
+float crosshairSizeSlider = 0.0f;
+bool IsCrossHair = false;
+bool IsNocamerashake = false;
+bool IsFastshoot = false;
+bool IsNorecoil2 = false;
+bool IsFastDrop = false;
+bool IsHitXPL = false;
+bool InstantHit = false;
+float carx = 0.f, cary = 0.f, carz = 0.f;
+bool CarFly = false;
+bool tudongnhay = false;
+bool chaynhanhv2 = false;
+float tocdoquay = 0.f;
+bool isSpinning = false;
+float DanceValue = 0.f;
+float DancerValue = 0.f;
+float rainbowSpeed = 0.02f;
+bool MaxStep = false;
+bool good = false;
+bool Blacksky = false;
+bool 枪械变大 = false;
+bool HitX = false;
+bool ReCo = false;
+float magicX = 23.f + 150.f;
+float magicY = 25.f + 150.f;
+float magicZ = 30.5f + 150.f;
+bool Magic = false;
+bool IsLaunch = false;
+bool ResetGuest = false;
+int SX = 0;
+float Gun_Size = 2.5;
+bool 人物自杀 = false;
+bool 据点 = false;
+int currentLanguage = 0;
+bool WideView = false;
+bool MemoryFastScope = false;
+bool MemoryZoom = false;
+bool MemoryDamage = false;
+bool MemoryRainbow = false;
+bool MemoryCrossSpin = false;
+float MemoryZoomFov = 40.f;
+float MemoryRainbowSpeed = 1.6f;
+float MemoryCrossSpinSpeed = 180.f;
+int WideValue = 100;
+bool initialized = false;
+int Interval = 1;
+int counter = 0;
+int Radar = 0;
+bool 下雪特效 = false;
+long l2 = 0xFFFFF;
+float density = -1;
+char extra[30];
+kaddr module = 0;
+
+namespace YN {
+    int boxtype = 1;
+    int healthbartype = 0;
+    int Nationtype = 2;
+    int DirectionLineSize = 70;
+    int VehicleDirectionLineSize = 100;
+    int offscreen_range = 40;
+    int max_distance_offscreen = 400;
+    int playersdistancessize = 600;
+    bool esp_Outline = true;
+    int distance_Radar = 150;
+}
+
+sConfig Config{false};
+
+namespace imgui {
+    bool ESP = false, HideBot = false, Health = false, Line = false, Name = false, TeamID = false, Distance = false, EnemyCount = false, Boxes = false;
+    bool Weapon = false, Bone = false, GameInfo = false, Alert360 = false, EnemyAiming = false;
+    bool Items = false, Lootbox = false, Vehicle = false;
+}
+
+namespace Settings {
+    bool isVisibilityCheck = true;
+    bool BypassMode = false;
+    namespace SettingsTab { bool BypassMode = false; }
+    namespace Aimbot {
+        bool Tick = false;
+        int AimMethod = 0;
+        std::atomic<int> TriggerMode{3};
+        bool SilentAim = false;
+        namespace SilentAimSettings {
+            bool EnableFov = true, AimingLine = false, Prediction = true, AimKnocked = false, Highprecisiontracking = false, BypassFOVLimit = false;
+            int Aimpositon = 0;
+            float MaxStepDeg = 2.0f;
+        }
+    }
+}
+
+void InitializeMemoryProtection() {
+    if (!initialized) { initialized = true; }
+}
 
 // HMOOD__TG@i_8_f
 static bool IsAimTriggerActive(const ASTExtraPlayerCharacter* player) {
@@ -90,50 +251,36 @@ static bool IsAimTriggerActive(const ASTExtraPlayerCharacter* player) {
 @implementation metalbiew
 INI* config;
 
-
 // HMOOD__TG@i_8_f
 - (MTKView *)mtkView
 {
     return (MTKView *)self.view;
 }
 
-
 // HMOOD__TG@i_8_f
 - (void)loadView {
-
-self.view = [[MTKView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
-
+    self.view = [[MTKView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
 }
 
 // HMOOD__TG@i_8_f
 - (void)viewDidLoad {
-    
-    
     [super viewDidLoad];
-    
     self.mtkView.device = self.device;
     self.mtkView.delegate = self;
     self.mtkView.clearColor = MTLClearColorMake(0, 0, 0, 0);
     self.mtkView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0];
     self.mtkView.clipsToBounds = YES;
-   
 }
-
 
 // HMOOD__TG@i_8_f
 - (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil bundle:(nullable NSBundle *)nibBundleOrNil
 {
-    
-    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     NSString *documentsDirectory = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-
     NSFileManager *fileManager = [NSFileManager defaultManager];
-
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"IMGUI.ini"];
 
     if(![fileManager fileExistsAtPath:filePath]){
-
         [fileManager createFileAtPath:filePath contents:[NSData data] attributes:nil];
     }
 
@@ -148,16 +295,11 @@ self.view = [[MTKView alloc] initWithFrame:CGRectMake(0, 0, kWidth, kHeight)];
     ImGuiIO& io = ImGui::GetIO(); (void)io;
 
     ApplyImGuiStyle();
-
-
     InitializeMenuFonts(io);
     ImGui_ImplMetal_Init(_device);
     
     return self;
 }
-
-
- 
 
 static auto start = std::chrono::steady_clock::now();
 static auto noww = std::chrono::high_resolution_clock::now();
@@ -171,14 +313,10 @@ namespace Variables {
     int ActiveTab = 1;
 }
 
-
 // HMOOD__TG@i_8_f
 - (void)drawInMTKView:(MTKView*)view
 {
-  
-    [[HideFunsion sharedManager] addView:view
-                         isStreaming:hideHacker
-                      MenDeal:MenDeal];
+    [[HideFunsion sharedManager] addView:view isStreaming:hideHacker MenDeal:MenDeal];
 
     ImGuiIO& io = ImGui::GetIO();
     io.DisplaySize.x = view.bounds.size.width;
@@ -188,7 +326,6 @@ namespace Variables {
     static bool s_configLoaded = false;
     if (!s_configLoaded) { [self readIniConfig]; s_configLoaded = true; }
     
-    
 #if TARGET_OS_OSX
     CGFloat framebufferScale = view.window.screen.backingScaleFactor ?: NSScreen.mainScreen.backingScaleFactor;
 #else
@@ -197,19 +334,16 @@ namespace Variables {
     io.DisplayFramebufferScale = ImVec2(framebufferScale, framebufferScale);
     io.DeltaTime = 1 / float(view.preferredFramesPerSecond ?: 60);
     
-    
     id<MTLCommandBuffer> commandBuffer = [self.commandQueue commandBuffer];
     
-if (MenDeal == true) {
-    [self.view setUserInteractionEnabled:YES];
-} else if (MenDeal == false) {
-    [self.view setUserInteractionEnabled:NO];
-}
+    if (MenDeal == true) {
+        [self.view setUserInteractionEnabled:YES];
+    } else if (MenDeal == false) {
+        [self.view setUserInteractionEnabled:NO];
+    }
 
-
-MTLRenderPassDescriptor* renderPassDescriptor = view.currentRenderPassDescriptor;
-    if (renderPassDescriptor != nil)
-    {
+    MTLRenderPassDescriptor* renderPassDescriptor = view.currentRenderPassDescriptor;
+    if (renderPassDescriptor != nil) {
         id <MTLRenderCommandEncoder> renderEncoder = [commandBuffer renderCommandEncoderWithDescriptor:renderPassDescriptor];
         [renderEncoder pushDebugGroup:@""];
         
@@ -217,28 +351,21 @@ MTLRenderPassDescriptor* renderPassDescriptor = view.currentRenderPassDescriptor
         ImGui::NewFrame();
         if (imgui::ESP || Settings::Aimbot::Tick || Enable) {
             Drawesp();
-               }
+        }
 
-DrawWorldEsp();
-RenderMenu();
-        
+        DrawWorldEsp();
+        RenderMenu();
             
         ImGui::Render();
         ImDrawData* draw_data = ImGui::GetDrawData();
         ImGui_ImplMetal_RenderDrawData(draw_data, commandBuffer, renderEncoder);
         
-        
         [renderEncoder popDebugGroup];
         [renderEncoder endEncoding];
-        
         [commandBuffer presentDrawable:view.currentDrawable];
-            
-        }
+    }
 
-
-[commandBuffer commit];
-
-
+    [commandBuffer commit];
 }
     
 // HMOOD__TG@i_8_f
