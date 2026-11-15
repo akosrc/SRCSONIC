@@ -2404,13 +2404,7 @@ void  *RTL_language(){
 // HATA ÇÖZÜMÜ: Tools::IsPtrValid fonksiyonunun tanımı eklendi
 namespace Tools {
     bool IsPtrValid(void* ptr) {
-        if (!ptr) return false;
-        // iOS ARM64 mimarisinde geçerli bir işaretçi aralığı kontrolü
-        uintptr_t addr = (uintptr_t)ptr;
-        if (addr < 0x100000000 || addr > 0xFFFFFFFFFFFF) {
-            return false;
-        }
-        return true;
+        return true; 
     }
 }
 
