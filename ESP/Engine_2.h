@@ -1,6 +1,13 @@
 // HMOOD__TG@i_8_f
 #pragma once
 
+// HATA ÇÖZÜMÜ: Eksik Kütüphaneler Eklendi
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <Metal/Metal.h>
+#import <MetalKit/MetalKit.h>
+#include <mach-o/dyld.h>
+#include <string>
 #include <atomic>
 
 #ifndef HMOOD_METALBIEW_IMPLEMENTATION
@@ -31,6 +38,7 @@ static uintptr_t Get_module_base() {
     }
     return 0;
 }
+
 // HMOOD__TG@i_8_f
 bool IsValidAddress(kaddr addr) {
     return addr > 0x100000000 && addr < 0x2000000000;
@@ -44,313 +52,230 @@ extern bool MXValQy;
 extern UIView* menuIconView;
 extern float menuIconAlpha;
 
-bool hideNameKillMsg = false;
-
-float strokeIntensity = 1.0f;
-
-ASTExtraPlayerController* g_LocalController = 0;
-
-ASTExtraPlayerController* localPlayerController = 0;
-
-ASTExtraPlayerCharacter* localPlayer = 0;
-
-ImFont* mainFont = nullptr;
-
-float globalHpAlphaF = 1.00f;
-
-ImU32 COLOR_Distance = IM_COL32(255, 255, 255, 255);
-
-ImColor borderColor = ImColor(0, 255, 0, 255);
-ImColor bgColor = ImColor(0, 0, 0, 80);
-
-bool ifismembotenable = false;
+// ÇAKIŞMA ÇÖZÜMÜ: extern yapıldı
+extern bool hideNameKillMsg;
+extern float strokeIntensity;
+extern ASTExtraPlayerController* g_LocalController;
+extern ASTExtraPlayerController* localPlayerController;
+extern ASTExtraPlayerCharacter* localPlayer;
+extern ImFont* mainFont;
+extern float globalHpAlphaF;
+extern ImU32 COLOR_Distance;
+extern ImColor borderColor;
+extern ImColor bgColor;
+extern bool ifismembotenable;
 
 namespace Settings {
-
-    bool isVisibilityCheck = true;
-    bool ifismembotenable = false;
-    bool BypassMode = false;
-
+    extern bool isVisibilityCheck;
+    extern bool ifismembotenable;
+    extern bool BypassMode;
     namespace SettingsTab {
-        bool BypassMode = false;
+        extern bool BypassMode;
     }
-
     namespace Aimbot {
-
-        bool Enable = false;
-        bool Tick = false;
-        int AimMethod = 0;
-        std::atomic<int> TriggerMode{3};
-        float FOV = 200.f;
-
-        bool MemoryAimbot = false;
-        bool SilentAim = false;
-
+        extern bool Enable;
+        extern bool Tick;
+        extern int AimMethod;
+        extern std::atomic<int> TriggerMode;
+        extern float FOV;
+        extern bool MemoryAimbot;
+        extern bool SilentAim;
         namespace SilentAimSettings {
-
-            bool Enable = true;
-            bool AimKnocked = false;
-            bool Highprecisiontracking = false;
-
-            int Aimpositon = 0;
-            bool Prediction = true;
-
-            bool EnableFov = true;
-
-            bool BypassFOVLimit = false;
-
-            bool AimingLine = false;
-            float MaxStepDeg = 2.0f;
-
-            int LegitTrackSwitchrate = 6;
+            extern bool Enable;
+            extern bool AimKnocked;
+            extern bool Highprecisiontracking;
+            extern int Aimpositon;
+            extern bool Prediction;
+            extern bool EnableFov;
+            extern bool BypassFOVLimit;
+            extern bool AimingLine;
+            extern float MaxStepDeg;
+            extern int LegitTrackSwitchrate;
         }
     }
 }
 
-float ESPMaxDistance = 300.f;
-float AlertRadius = 50.0f;
-float SilentAimMaxDistance = 355.f;
-int IsStyle = 1;
+extern float ESPMaxDistance;
+extern float AlertRadius;
+extern float SilentAimMaxDistance;
+extern int IsStyle;
 
 namespace imgui {
-    bool ESP = false;
-    bool Boxes = false;
-    bool HideBot = false;
-    bool Health = false;
-    bool Line = false;
-    bool Name = false;
-    bool TeamID = false;
-    bool Distance = false;
-    bool EnemyCount = false;
-    bool Weapon = false;
-    bool Bone = false;
-    bool GameInfo = false;
-    bool Alert360 = false;
-    bool EnemyAiming = false;
-    bool Items = false;
-    bool Lootbox = false;
-    bool Vehicle = false;
-
-    bool Grenade = false;
+    extern bool ESP;
+    extern bool Boxes;
+    extern bool HideBot;
+    extern bool Health;
+    extern bool Line;
+    extern bool Name;
+    extern bool TeamID;
+    extern bool Distance;
+    extern bool EnemyCount;
+    extern bool Weapon;
+    extern bool Bone;
+    extern bool GameInfo;
+    extern bool Alert360;
+    extern bool EnemyAiming;
+    extern bool Items;
+    extern bool Lootbox;
+    extern bool Vehicle;
+    extern bool Grenade;
 }
 
 namespace itemesp {
-    inline bool Enable = false;
-
-    inline bool Vehicles = true;
-
-    inline float MaxDistance = 200.0f;
+    extern bool Enable;
+    extern bool Vehicles;
+    extern float MaxDistance;
 }
 
-bool IsEnglish;
-bool ShowFov = false;
+extern bool IsEnglish;
+extern bool ShowFov;
+extern int 玩家, 人机;
+extern bool 坐标追;
+extern bool 自动开火;
+extern const float offset;
+extern bool 下雨;
+extern float 巨人;
+extern bool 人物变大;
+extern bool 重置游客;
+extern int 打击圈;
+extern int CL;
+extern bool 瞄准线;
+extern bool AimBot;
+extern int AimF;
+extern int value;
+extern int Aim;
+extern float 追踪概率;
+extern bool FixShoot;
+extern float Cross;
+extern float g_disstance;
+extern bool IgnoreKnocked;
+extern bool VisCheck;
+extern bool IgnoreBot;
+extern float RadarX;
+extern float RadarY;
+extern bool 对局信息;
+extern bool IsLogin;
+extern bool Enable;
+extern float crosshairSizeSlider;
+extern bool IsCrossHair;
+extern bool IsNocamerashake;
+extern bool IsFastshoot;
+extern bool IsFastSwitch;
+extern bool IsNorecoil2;
+extern bool IsFastDrop;
+extern bool IsHitXPL;
+extern bool InstantHit;
+extern float carx;
+extern float cary;
+extern float carz;
+extern bool CarFly;
+extern bool tudongnhay;
+extern bool chaynhanhv2;
+extern float tocdoquay;
+extern bool isSpinning;
+extern float DanceValue;
+extern float DancerValue;
+extern float rainbowSpeed;
+extern bool MaxStep;
+extern bool good;
+extern bool Blacksky;
+extern bool 枪械变大;
+extern bool HitX;
+extern bool ReCo;
+extern float magicX;
+extern float magicY;
+extern float magicZ;
+extern bool MagicSDK;
+extern bool Magic;
+extern bool textBorder;
+extern bool IsLaunch;
+extern bool ResetGuest;
+extern int SX;
+extern float Gun_Size;
+extern bool 人物自杀;
+extern bool 据点;
+extern int currentLanguage;
+extern bool WideView;
+extern bool MemoryFastScope;
+extern bool MemoryZoom;
+extern bool MemoryDamage;
+extern bool MemoryRainbow;
+extern bool MemoryCrossSpin;
+extern float MemoryZoomFov;
+extern float MemoryRainbowSpeed;
+extern float MemoryCrossSpinSpeed;
+extern int WideValue;
+extern bool initialized;
 
-int 玩家, 人机;
-
-bool 坐标追;
-
-bool 自动开火;
-
-const float offset = 21.0f;
-
-bool 下雨;
-
-float 巨人;
-
-bool 人物变大;
-bool 重置游客;
-
-int 打击圈 = 0;
-int CL = 1;
-
-bool 瞄准线;
-bool AimBot = false;
-int AimF = 3;
-int value = 120;
-
-int Aim = 0;
-
-float 追踪概率 = 100;
-
-bool FixShoot;
-float Cross = 150.f;
-float g_disstance = 150.0f;
-
-bool IgnoreKnocked = false;
-
-bool VisCheck = false;
-bool IgnoreBot = false;
-
-float RadarX = 30;
-float RadarY = 10;
-bool 对局信息 = true;
-bool IsLogin = true;
-bool Enable = false;
-
-float crosshairSizeSlider = 0.0f;
-bool IsCrossHair = false;
-
-bool IsNocamerashake = false;
-
-bool IsFastshoot = false;
-bool IsFastSwitch = false;
-bool IsNorecoil2 = false;
-
-bool IsFastDrop = false;
-
-bool IsHitXPL = false;
-bool InstantHit = false;
-
-float carx;
-float cary;
-float carz;
-bool CarFly = false;
-
-bool tudongnhay = false;
-bool chaynhanhv2 = false;
-float tocdoquay;
-bool isSpinning = false;
-
-float DanceValue;
-
-float DancerValue;
-
-float rainbowSpeed = 0.02f;
-
-bool MaxStep = false;
-
-bool good = false;
-
-bool Blacksky = false;
-
-bool 枪械变大 = false;
-bool HitX = false;
-
-bool ReCo = false;
-
-float magicX = 23.f + 150.f;
-float magicY = 25.f + 150.f;
-float magicZ = 30.5f + 150.f;
-bool MagicSDK = false;
-
-static bool Magic = false;
-
-bool textBorder = true;
-
-static bool IsLaunch = false;
-
-bool ResetGuest;
-int SX = 0;
-
-float Gun_Size = 2.5;
-
-bool 人物自杀;
-bool 据点 = false;
-
-static int currentLanguage = 0;
-
-bool WideView = false;
-bool MemoryFastScope = false;
-bool MemoryZoom = false;
-bool MemoryDamage = false;
-bool MemoryRainbow = false;
-bool MemoryCrossSpin = false;
-float MemoryZoomFov = 40.f;
-float MemoryRainbowSpeed = 1.6f;
-float MemoryCrossSpinSpeed = 180.f;
-int WideValue = 100;
-
-bool initialized = false;
-// HMOOD__TG@i_8_f
-void InitializeMemoryProtection() {
-    if (!initialized) {
-
-        initialized = true;
-    }
-}
+void InitializeMemoryProtection();
 
 #include <iostream>
 #include <chrono>
 #include <thread>
 #include <cmath>
 
-bool hideHacker = true;
-HeeeNoScreenShotView* hideesp = nullptr;
+extern bool hideHacker;
+extern HeeeNoScreenShotView* hideesp;
+extern kaddr module;
 
-kaddr module = (unsigned long)Get_module_base();
 namespace YN {
-    int boxtype = 1;
-    int healthbartype = 0;
-    int Nationtype = 2;
-    int DirectionLineSize = 70;
-    int VehicleDirectionLineSize = 100;
-    int offscreen_range = 40;
-    int max_distance_offscreen = 400;
-    int playersdistancessize = 600;
-    bool esp_Outline = true;
-    int distance_Radar = 150;
+    extern int boxtype;
+    extern int healthbartype;
+    extern int Nationtype;
+    extern int DirectionLineSize;
+    extern int VehicleDirectionLineSize;
+    extern int offscreen_range;
+    extern int max_distance_offscreen;
+    extern int playersdistancessize;
+    extern bool esp_Outline;
+    extern int distance_Radar;
 }
 
-long l2 = 0xFFFFF;
-
+extern long l2;
 using namespace std;
 using namespace SDK;
 using namespace ImGui;
 
-static int Radar = 0;
-
-bool 下雪特效 = false;
+extern int Radar;
+extern bool 下雪特效;
 
 struct sConfig {
     struct sESPMenu {
         bool Health;
-
         bool Name;
         bool Distance;
         bool TeamID;
         bool 对局信息;
         bool Weapon;
-
         bool Vehicle;
         bool IgnoreBot;
     };
     sESPMenu ESPMenu{false};
 };
-sConfig Config{false};
+extern sConfig Config;
 
-UISlider* Auto1;
-
-int Interval = 1;
-int counter;
-
-float AimSmooth = 5.0f;
-
-int boxtype = 1;
-int healthbartype = 0;
-int Nationtype = 2;
-int DirectionLineSize = 70;
-int VehicleDirectionLineSize = 100;
-int offscreen_range = 40;
-int max_distance_offscreen = 400;
-int playersdistancessize = 600;
-bool esp_Outline = true;
-int distance_Radar = 150;
+extern UISlider* Auto1;
+extern int Interval;
+extern int counter;
+extern float AimSmooth;
+extern int boxtype;
+extern int healthbartype;
+extern int Nationtype;
+extern int DirectionLineSize;
+extern int VehicleDirectionLineSize;
+extern int offscreen_range;
+extern int max_distance_offscreen;
+extern int playersdistancessize;
+extern bool esp_Outline;
+extern int distance_Radar;
 
 #define SLEEP_TIME 1000LL / 120LL
 #define TORAD(x) ((x) * (M_PI / 180.f))
-#define DefineHook(RET, NAME, ARGS) \          \
-    ARGS;                           
 
-
-int screenWidth ;
-int screenHeight ;
-
-
-char extra[30];
-float density = -1;
-
+extern int screenWidth;
+extern int screenHeight;
+extern char extra[30];
+extern float density;
 
 #define PI 3.14159265358979323846
 #define __fastcall
-
-
