@@ -4,6 +4,7 @@
 #import <UIKit/UIKit.h>
 #import <Metal/Metal.h>
 #import <MetalKit/MetalKit.h> 
+#import <sys/utsname.h>
 #include <mach-o/dyld.h>
 #include <sys/sysctl.h>
 #include <sys/stat.h>
