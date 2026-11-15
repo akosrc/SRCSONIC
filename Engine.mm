@@ -107,7 +107,6 @@ ASTExtraPlayerController* localPlayerController = nullptr;
 ASTExtraPlayerCharacter* localPlayer = nullptr;
 
 ImFont* mainFont = nullptr;
-ImFont* cyberMenuFont = nullptr;
 
 int screenWidth = 0;
 int screenHeight = 0;
@@ -117,7 +116,6 @@ int glHeight = 0;
 UFont *tslFont = 0, *robotoFont = 0, *robotoTinyFont = 0;
 HeeeNoScreenShotView* hideesp = nullptr;
 
-bool MenDeal = true;
 bool IsEnglish = false;
 bool ShowFov = false;
 int 玩家 = 0, 人机 = 0;
